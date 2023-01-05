@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">databinding7</string>
+    <string name="button1" translatable="false">+1</string>
+    <string name="button2" translatable="false">+2</string>
+    <string name="button3" translatable="false">+3</string>
+    <string name="undoButton">undo</string>
+    <string name="resetButton">reset</string>
+    <string name="team_a">Team A</string>
+    <string name="team_b">Team B</string>
+</resources>

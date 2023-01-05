@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">数据绑定7</string>
+    <string name="undoButton">撤销</string>
+    <string name="resetButton">重置</string>
+    <string name="team_a">团队 A</string>
+    <string name="team_b">团队 B</string>
+</resources>

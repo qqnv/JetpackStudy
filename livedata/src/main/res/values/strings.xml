@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">livedata</string>
+    <string name="tv_first">0</string>
+    <string name="btn_stop">Stop</string>
+</resources>
