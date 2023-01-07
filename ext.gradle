@@ -1,0 +1,55 @@
+ext {
+    android = [
+            compileSdkVersion        : 32,
+            buildToolsVersion        : "29.0.0",
+            minSdkVersion            : 28,
+            targetSdkVersion         : 32,
+            applicationId            : 'com.dongnaoedu.jetpackstudy',
+            versionCode              : 1,
+            versionName              : '1.0',
+            multiDexEnabled          : true,
+            testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner"
+    ]
+    depsVersion = [
+            appcompact        : '1.5.1',
+            material          : '1.7.0',
+            constraintlayout  : '2.1.4',
+            junit             : '4.13.2',
+            ajunit            : '1.1.5',
+            espressoCore      : '3.5.1',
+
+            lifecycle         : '2.2.0',
+            picasso           : '2.71828',
+            savedstate        : '2.6.0-alpha03',
+            legacy            : '1.0.0',
+            navigation        : '2.5.3',
+            retrofit2         : '2.9.0',
+            paging            : '3.1.1',
+            room              : '2.4.3',
+            swiperefreshlayout: '1.2.0-alpha01',
+            workRuntime       : '2.8.0-rc01'
+    ]
+    depsLibs = [
+            appcompact         : "androidx.appcompat:appcompat:${depsVersion.appcompact}",
+            material           : "com.google.android.material:material:${depsVersion.material}",
+            constraintlayout   : "androidx.constraintlayout:constraintlayout:${depsVersion.constraintlayout}",
+            junit              : "junit:junit:${depsVersion.junit}",
+            ajunit             : "androidx.test.ext:junit:${depsVersion.ajunit}",
+            espressoCore       : "androidx.test.espresso:espresso-core:${depsVersion.espressoCore}",
+
+            lifecycleExtensions: "androidx.lifecycle:lifecycle-extensions:${depsVersion.lifecycle}",
+            picasso            : "com.squareup.picasso:picasso:${depsVersion.picasso}",
+            savedstate         : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${depsVersion.savedstate}",
+            legacy             : "androidx.legacy:legacy-support-v4:${depsVersion.legacy}",
+            navigationFragment : "androidx.navigation:navigation-fragment:${depsVersion.navigation}",
+            navigationUi       : "androidx.navigation:navigation-ui:${depsVersion.navigation}",
+            retrofit           : "com.squareup.retrofit2:retrofit:${depsVersion.retrofit2}",
+            converterGson      : "com.squareup.retrofit2:converter-gson:${depsVersion.retrofit2}",
+            pagingRuntime      : "androidx.paging:paging-runtime:${depsVersion.paging}",
+            roomRuntime        : "androidx.room:room-runtime:${depsVersion.room}",
+            swiperefreshlayout : "androidx.swiperefreshlayout:swiperefreshlayout:${depsVersion.swiperefreshlayout}",
+            roomCompiler       : "androidx.room:room-compiler:${depsVersion.room}",
+            workRuntime        : "androidx.work:work-runtime:${depsVersion.workRuntime}"
+
+    ]
+}

@@ -1,38 +1,16 @@
-plugins {
-    id 'com.android.application'
-}
+apply from: '../app.gradle'
 
 android {
-    compileSdkVersion 32
-
     defaultConfig {
-        applicationId "com.dongnaoedu.jetpackstudy"
-        minSdkVersion 28
-        targetSdkVersion 32
-        versionCode 1
-        versionName "1.0"
+        //多文件开发时的命名规范，解决模块间重名冲突问题，如果不按照该规则命名会有警告
+        //resourcePrefix 'app_'
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        //应用唯一标识
+        applicationId rootProject.android.applicationId
+        //
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
     }
 }
-
 dependencies {
-
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

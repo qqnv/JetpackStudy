@@ -1,0 +1,53 @@
+//plugins {
+//    id 'com.android.application'
+//}
+//应用程序模块插件
+plugins.apply('com.android.application')
+
+//配置项目构建的各种属性
+android {
+    //编译版本
+    compileSdkVersion rootProject.android.compileSdkVersion
+    //项目细节配置
+    defaultConfig {
+        //最低兼容的Android系统版本
+        minSdkVersion rootProject.android.minSdkVersion
+        //在该目标版本中已经经过了测试，系统将会为应用程序启动一些最新的功能和特性（例如Android6.0增加的运行时权限）
+        targetSdkVersion rootProject.android.targetSdkVersion
+        //弃用JUnit测试，可以为当前项目编写测试用例，以保证功能的正确性和稳定性
+        testInstrumentationRunner rootProject.android.testInstrumentationRunner
+    }
+
+    //用于指定生成安装文件的相关配置，通常一个是debug一个是release
+    buildTypes {
+        //指定生成正式版安装文件的配置
+        release {
+            //指定是否对项目的代码进行混淆，true代表混淆，false代表不混淆
+            minifyEnabled false
+            //指定混淆时使用的规则文件
+            //第一个是在Android SDK/tools/proguard目录下，里面是所有项目的通用项目规则
+            //第二个是在当前项目的根目录下的，里面可以编写当前项目特有的混淆规则
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //项目编译或运行时的JDK版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+//指定当前项目所有的依赖关系，通常有三种：本地依赖、库依赖、远程依赖
+//本地依赖可以对本地的jar包或目录添加依赖关系：implementation fileTree(dir: 'libs', include: ['*.jar'])
+//库依赖可以对项目中的库依赖添加依赖关系：implementation project + 依赖库名称（implementation project(':helper')）
+//远程依赖可以对jcenter仓库上的开源项目添加依赖关系：远程依赖声明 + 域名部分（用于和其他公司的库作区分）+
+//工程名部分（同一个公司中不同的库工程作区分）+ 版本号（同一个库不同的版本作区分）
+//testImplementation和androidTestImplementation用于声明测试用例库
+dependencies {
+    implementation depsLibs.appcompact
+    implementation depsLibs.material
+    implementation depsLibs.constraintlayout
+    testImplementation depsLibs.junit
+    androidTestImplementation depsLibs.ajunit
+    androidTestImplementation depsLibs.espressoCore
+}
